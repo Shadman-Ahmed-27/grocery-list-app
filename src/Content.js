@@ -1,35 +1,28 @@
 import {useState} from 'react';
 
 const Content = () => {
-  const [name, setName] = useState('Dave');
+    const  [items, setItems] = useState([
+        {
+            id: 1,
+            checked: true,
+            item: "One half pound bag of Cocoa Covered Almonds Unsalted"
+        },
+        {
+            id: 2,
+            checked: false,
+            item: "Item 2"
+        },
+        {
+            id: 3,
+            checked: false,
+            item: "Item 3"
+        }
+    ]);
+    
+    return (
+        <main>
 
-    const handleNameChange  = () => {
-        const names = ['Bob','Kevin','Dave'];
-        const int = Math.floor(Math.random() * 3)
-        setName (names[int]);
-    }
-
-  const handleClick = () => {
-    console.log('clicked')
-  }
-
-  const handleClick2 = (name) => {
-    console.log(`${name} was clicked`)
-  }
-
-  const handleClick3 = (e) => {
-    console.log(e.target.innerText)
-  }
-
-  return (
-    <main>
-        <p onDoubleClick={handleClick}>
-          Hello {name}!
-        </p>
-        <button onClick={handleNameChange}>Change Name</button>
-        <button onClick={() => handleClick2('Dave')}>Click It</button>
-        <button onClick={(e) => handleClick3(e)}>Click It</button>
-    </main>
+        </main>
   )
 }
 
